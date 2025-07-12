@@ -18,7 +18,7 @@ CORS(app, origins=['http://localhost:5173'])
 # Configuration
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
 UPLOAD_FOLDER = 'uploads'
-MODEL_PATH = 'brain_tumor_vgg16.h5'
+MODEL_PATH = 'brain_tumor_vgg16.keras'
 
 # Créer le dossier uploads s'il n'existe pas
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -43,7 +43,7 @@ def load_model():
         # from tensorflow.keras.models import load_model as keras_load_model
         
         # Charger le modèle
-        # model = keras_load_model(MODEL_PATH)
+        # model = keras_load_model(MODEL_PATH)  # Supporte automatiquement .keras et .h5
         # model_loaded = True
         
         # Pour la simulation (à supprimer dans un vrai environnement)
@@ -219,8 +219,9 @@ def predict():
             'model_info': {
                 'name': 'VGG16 Brain Tumor Detection',
                 'version': '1.0.0',
-                'input_shape': '224x224x3',
-                'architecture': 'VGG16 + Custom Classifier'
+                'input_shape': '224x224x3', 
+                'architecture': 'VGG16 + Custom Classifier',
+                'format': 'Keras (.keras)'
             },
             'image_info': {
                 'original_filename': file.filename,

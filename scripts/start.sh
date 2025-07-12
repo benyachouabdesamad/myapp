@@ -17,9 +17,9 @@ if ! command -v docker-compose &> /dev/null; then
 fi
 
 # Vérifier si le modèle existe
-if [ ! -f "backend/brain_tumor_vgg16.h5" ]; then
-    echo "⚠️  ATTENTION: Le fichier modèle 'brain_tumor_vgg16.h5' n'a pas été trouvé dans backend/"
-    echo "📁 Veuillez placer votre modèle dans backend/brain_tumor_vgg16.h5 avant de continuer."
+if [ ! -f "backend/brain_tumor_vgg16.keras" ]; then
+    echo "⚠️  ATTENTION: Le fichier modèle 'brain_tumor_vgg16.keras' n'a pas été trouvé dans backend/"
+    echo "📁 Veuillez placer votre modèle dans backend/brain_tumor_vgg16.keras avant de continuer."
     read -p "Voulez-vous continuer sans le modèle (mode simulation) ? (y/N): " -n 1 -r
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then

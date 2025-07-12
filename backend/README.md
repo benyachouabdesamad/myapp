@@ -16,15 +16,15 @@ pip install -r requirements.txt
 ```
 
 3. **Placer votre modèle:**
-   - Copiez votre fichier `brain_tumor_vgg16.h5` dans le dossier `backend/`
-   - Le fichier doit être exactement nommé `brain_tumor_vgg16.h5`
+   - Copiez votre fichier `brain_tumor_vgg16.keras` dans le dossier `backend/`
+   - Le fichier doit être exactement nommé `brain_tumor_vgg16.keras`
 
 ## Structure attendue du modèle
 
 Votre modèle doit:
 - Accepter des images de taille 224x224x3 (format VGG16)
 - Retourner une prédiction binaire (0 = No Tumor, 1 = Tumor)
-- Être sauvegardé au format Keras (.h5)
+- Être sauvegardé au format Keras (.keras ou .h5)
 
 ## Démarrage
 

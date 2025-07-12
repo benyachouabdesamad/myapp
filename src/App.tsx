@@ -306,7 +306,7 @@ function App() {
                     <p><span className="font-medium">Modèle:</span> {result.model_info.name}</p>
                     <p><span className="font-medium">Architecture:</span> {result.model_info.architecture}</p>
                     <p><span className="font-medium">Input:</span> {result.model_info.input_shape}</p>
-                    <p><span className="font-medium">Fichier:</span> brain_tumor_vgg16.h5</p>
+                    <p><span className="font-medium">Fichier:</span> brain_tumor_vgg16.keras</p>
                   </div>
                 </div>
 
