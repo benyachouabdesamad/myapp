@@ -18,7 +18,7 @@ CORS(app, origins=['http://localhost:5173'])
 # Configuration
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
 UPLOAD_FOLDER = 'uploads'
-MODEL_PATH = 'brain_tumor_vgg16.keras'
+MODEL_PATH = 'brain_model.h5'
 
 # Créer le dossier uploads s'il n'existe pas
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -49,7 +49,7 @@ def load_model():
         # Pour la simulation (à supprimer dans un vrai environnement)
         model_loaded = True
         print(f"✅ Modèle chargé avec succès: {MODEL_PATH}")
-        print(f"📊 Architecture: VGG16 pour détection de tumeurs cérébrales")
+        print(f"📊 Architecture: Modèle personnalisé pour détection de tumeurs cérébrales")
         
         return True
         
@@ -217,11 +217,11 @@ def predict():
             'processing_time': processing_time,
             'timestamp': time.strftime('%Y-%m-%d %H:%M:%S'),
             'model_info': {
-                'name': 'VGG16 Brain Tumor Detection',
+                'name': 'Brain Tumor Detection Model',
                 'version': '1.0.0',
                 'input_shape': '224x224x3', 
-                'architecture': 'VGG16 + Custom Classifier',
-                'format': 'Keras (.keras)'
+                'architecture': 'Custom Neural Network',
+                'format': 'Keras (.h5)'
             },
             'image_info': {
                 'original_filename': file.filename,

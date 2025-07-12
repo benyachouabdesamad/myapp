@@ -16,8 +16,8 @@ pip install -r requirements.txt
 ```
 
 3. **Placer votre modèle:**
-   - Copiez votre fichier `brain_tumor_vgg16.keras` dans le dossier `backend/`
-   - Le fichier doit être exactement nommé `brain_tumor_vgg16.keras`
+   - Copiez votre fichier `brain_model.h5` dans le dossier `backend/`
+   - Le fichier doit être exactement nommé `brain_model.h5`
 
 ## Structure attendue du modèle
 
@@ -59,7 +59,7 @@ Effectue une prédiction sur une image uploadée
   "processing_time": 1.23,
   "timestamp": "2024-01-15 14:30:25",
   "model_info": {
-    "name": "VGG16 Brain Tumor Detection",
+    "name": "Brain Tumor Detection Model",
     "version": "1.0.0",
     "input_shape": "224x224x3"
   }

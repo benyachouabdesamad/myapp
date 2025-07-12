@@ -6,7 +6,7 @@ Application complète utilisant l'intelligence artificielle pour détecter les t
 
 ### Prérequis
 - Docker et Docker Compose installés
-- Votre modèle `brain_tumor_vgg16.keras` entraîné
+- Votre modèle `brain_model.h5` entraîné
 
 ### Installation
 
@@ -19,7 +19,7 @@ cd brain-tumor-detection
 2. **Placer votre modèle**
 ```bash
 # Copiez votre modèle dans le dossier backend
-cp /chemin/vers/votre/brain_tumor_vgg16.keras backend/
+cp /chemin/vers/votre/brain_model.h5 backend/
 ```
 
 3. **Démarrer l'application**
@@ -84,7 +84,7 @@ brain-tumor-detection/
 │   ├── requirements.txt    # Dépendances Python
 │   ├── Dockerfile         # Image Docker backend
 │   ├── uploads/           # Dossier uploads (volume)
-│   └── brain_tumor_vgg16.keras  # Votre modèle (à ajouter)
+│   └── brain_model.h5     # Votre modèle (à ajouter)
 ├── src/                    # Frontend React
 │   ├── App.tsx            # Composant principal
 │   └── ...
@@ -142,7 +142,7 @@ Prédiction sur une image IRM
   "processing_time": 1.23,
   "timestamp": "2024-01-15 14:30:25",
   "model_info": {
-    "name": "VGG16 Brain Tumor Detection",
+    "name": "Brain Tumor Detection Model",
     "version": "1.0.0",
     "input_shape": "224x224x3"
   }
@@ -162,7 +162,7 @@ Prédiction sur une image IRM
 ### Le modèle ne se charge pas
 ```bash
 # Vérifier que le fichier existe
-ls -la backend/brain_tumor_vgg16.keras
+ls -la backend/brain_model.h5
 
 # Vérifier les logs du backend
 docker-compose logs backend

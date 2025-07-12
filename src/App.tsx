@@ -111,7 +111,7 @@ function App() {
         setError(`${errorData.error}: ${errorData.details}`);
       }
     } catch (err) {
-      setError('Erreur de connexion au serveur Flask (port 5000). Assurez-vous que le backend Python est démarré et que votre modèle brain_tumor_vgg16.h5 est chargé.');
+      setError('Erreur de connexion au serveur Flask (port 5000). Assurez-vous que le backend Python est démarré et que votre modèle brain_model.h5 est chargé.');
     } finally {
       setIsLoading(false);
     }
@@ -306,7 +306,7 @@ function App() {
                     <p><span className="font-medium">Modèle:</span> {result.model_info.name}</p>
                     <p><span className="font-medium">Architecture:</span> {result.model_info.architecture}</p>
                     <p><span className="font-medium">Input:</span> {result.model_info.input_shape}</p>
-                    <p><span className="font-medium">Fichier:</span> brain_tumor_vgg16.keras</p>
+                    <p><span className="font-medium">Fichier:</span> brain_model.h5</p>
                   </div>
                 </div>
 
@@ -344,6 +344,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="text-center text-sm text-gray-600">
             <p>Détection de tumeurs cérébrales - Modèle VGG16 personnalisé</p>
+            <p>Détection de tumeurs cérébrales - Modèle personnalisé (brain_model.h5)</p>
             <p className="mt-1">⚠️ Outil d'aide au diagnostic - Validation médicale requise</p>
           </div>
         </div>
